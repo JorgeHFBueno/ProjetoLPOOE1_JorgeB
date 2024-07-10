@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.lpoo2401.projetolpooe1_jorgeb;
-
 /**
  *
  * @author 20181pf.cc0221
