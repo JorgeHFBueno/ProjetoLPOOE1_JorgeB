@@ -4,3 +4,4 @@ Este projeto foi realizado como forma de avilação da primeira etapa da discipl
 
 Modelagem Realizada
 A modelagem do sistema incluiu as seguintes entidades e seus relacionamentos:
+![Diagrama do Projeto](Diagrama_ProjetoLPOOE1_JorgeBII.png)
