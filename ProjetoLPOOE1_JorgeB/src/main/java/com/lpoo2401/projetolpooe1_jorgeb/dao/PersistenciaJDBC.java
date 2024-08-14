@@ -19,7 +19,7 @@ public class PersistenciaJDBC implements InterfacePersistencia {
     private final String USER = "postgres";
     private final String SENHA = "postgres";
     //ALTERAR
-    public static final String URL = "jdbc:postgresql://localhost:5433/ProjetoLPOOE1_JorgeB";
+    public static final String URL = "jdbc:postgresql://localhost:5432/ProjetoLPOOE1_JorgeB";
     private Connection con = null;
 
     public PersistenciaJDBC() throws Exception {

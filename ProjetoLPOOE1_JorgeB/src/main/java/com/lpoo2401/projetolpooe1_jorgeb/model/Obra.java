@@ -15,19 +15,18 @@ import javax.persistence.Table;
  *
  * @author JRGB
  */
-
 @Entity
 @Table(name = "tb_obras")
-public class Obra implements Serializable{
-    
+public class Obra implements Serializable {
+
     @Id
     @SequenceGenerator(name = "seq_obr", sequenceName = "seq_obr_id", allocationSize = 1)
     @GeneratedValue(generator = "seq_obr", strategy = GenerationType.SEQUENCE)
     private Integer id;
-    
+
     @Column(nullable = false, length = 100)
     private String local;
-    
+
     @OneToMany(mappedBy = "obra")
     private List<Caminhao> caminhao;
 
@@ -54,4 +53,10 @@ public class Obra implements Serializable{
     public void setCaminhao(List<Caminhao> caminhao) {
         this.caminhao = caminhao;
     }
+
+    @Override
+    public String toString() {
+        return this.local;
+    }
+
 }

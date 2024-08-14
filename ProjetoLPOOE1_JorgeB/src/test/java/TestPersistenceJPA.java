@@ -119,7 +119,7 @@ public class TestPersistenceJPA {
         }
     }
     
-    //@Test 
+    @Test 
     public void testPersitenciaTodos() throws Exception{
         
         PersistenciaJPA persistencia = new PersistenciaJPA();
@@ -184,7 +184,7 @@ public class TestPersistenceJPA {
         }
     }
     
-    //@Test 
+    @Test 
     public void testPersitenciaComAssociacoes() throws Exception{
 
     PersistenciaJPA persistencia = new PersistenciaJPA();
@@ -215,7 +215,7 @@ public class TestPersistenceJPA {
             System.out.println("Nao encontrou o motorista de CPF = 499166297");
             return;
         } else {
-            System.out.println("Encontrou o motorista de CPF = " + m1.getCPF());
+            System.out.println("Associou Caminhao com o motorista de CPF = " + m1.getCPF());
         }
 
         //Associa CAMINHAO com OBRA
@@ -260,7 +260,7 @@ public class TestPersistenceJPA {
     }
     }
     
-    //@Test 
+    @Test 
     public void testMostraPersitencia() throws Exception{
 
     PersistenciaJPA persistencia = new PersistenciaJPA();
@@ -271,9 +271,9 @@ public class TestPersistenceJPA {
         Obra o = (Obra) persistencia.find(Obra.class, 1); 
         if (o == null) {
             System.out.println("Nao encontrou a obra de ID = 1");
-            return;
+            //return;
         } else {
-            System.out.println("Encontrou a obra de ID: " + o.getId());
+            System.out.println("\n Encontrou a obra de ID: " + o.getId());
             System.out.println("Com Local em " + o.getLocal());
             System.out.println("Com Caminhoes: ");
             for (Caminhao caminhao : o.getCaminhao()) {
@@ -285,9 +285,9 @@ public class TestPersistenceJPA {
         Caminhao c = (Caminhao) persistencia.find(Caminhao.class, "XYZ4991");
         if (c == null) {
             System.out.println("Nao encontrou o caminhao de placa = XYZ4991");
-            return;
+            //return;
         } else {
-            System.out.println("Encontrou o caminhao de placa: " + c.getPlaca());
+            System.out.println("\n Encontrou o caminhao de placa: " + c.getPlaca());
             System.out.println("Quilometragem: " + c.getKm());
             for (Motoristas motorista : c.getMotoristas()) {
                 System.out.println("  - Motorista CPF: " + motorista.getCPF() + ", Nome: " + motorista.getNome());
@@ -303,9 +303,9 @@ public class TestPersistenceJPA {
         Motoristas m1 = (Motoristas) persistencia.find(Motoristas.class, 499166297);
         if (m1 == null) {
             System.out.println("Nao encontrou o motorista de CPF = 499166297");
-            return;
+            //return;
         } else {
-            System.out.println("Encontrou o motorista de CPF: " + m1.getCPF());
+            System.out.println("\n Encontrou o motorista de CPF: " + m1.getCPF());
             System.out.println("Nome: " + m1.getNome());
             System.out.println("Telefone: " + m1.getNumero_celular());
             if (m1.getCaminhao() != null) {

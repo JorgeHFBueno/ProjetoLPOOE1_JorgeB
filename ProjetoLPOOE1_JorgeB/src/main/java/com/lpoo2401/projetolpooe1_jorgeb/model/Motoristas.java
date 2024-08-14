@@ -1,4 +1,3 @@
-
 package com.lpoo2401.projetolpooe1_jorgeb.model;
 
 import java.io.Serializable;
@@ -20,30 +19,28 @@ import javax.persistence.Transient;
  *
  * @author JRGB
  */
-
 @Entity
 @Table(name = "tb_motoristas")
 public class Motoristas implements Serializable {
-    
+
     @Id
     @Column(nullable = false, length = 11)
-    private Integer cpf; 
-    
+    private Integer cpf;
+
     @Column(nullable = false, length = 100)
     private String nome;
-    
+
     @Column(nullable = true, length = 12)
     private String numero_celular;
-    
+
     @ManyToOne
     @JoinColumn(name = "caminhao_id")
     private Caminhao caminhao;
-    
-        
-    public Motoristas(){
-        
+
+    public Motoristas() {
+
     }
-    
+
     public Integer getCPF() {
         return cpf;
     }
@@ -51,7 +48,7 @@ public class Motoristas implements Serializable {
     public void setCPF(Integer cpf) {
         this.cpf = cpf;
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -75,5 +72,10 @@ public class Motoristas implements Serializable {
     public void setCaminhao(Caminhao caminhao) {
         this.caminhao = caminhao;
     }
-    
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
+
 }

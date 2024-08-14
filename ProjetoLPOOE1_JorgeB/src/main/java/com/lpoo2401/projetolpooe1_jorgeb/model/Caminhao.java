@@ -16,21 +16,21 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tb_caminhao")
-public class Caminhao implements Serializable{
+public class Caminhao implements Serializable {
+
     @Id
     @Column(nullable = false, length = 7)
-    private String placa; 
-    
+    private String placa;
+
     @Column(nullable = false, length = 6)
     private Integer km;
-    
+
     @OneToMany(mappedBy = "caminhao")
     private List<Motoristas> motoristas;
-    
+
     @ManyToOne
     @JoinColumn(name = "obra_id")
     private Obra obra;
-    
 
     public String getPlaca() {
         return placa;
@@ -63,5 +63,10 @@ public class Caminhao implements Serializable{
     public void setObra(Obra obra) {
         this.obra = obra;
     }
-    
+
+    @Override
+    public String toString() {
+        return this.placa;
+    }
+
 }
